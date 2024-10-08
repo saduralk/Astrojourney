@@ -39,6 +39,9 @@ class AAstrojourneyCharacter : public ACharacter
 
 public:
 	AAstrojourneyCharacter();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat)
+	bool bMovementInput;
 	
 
 protected:
@@ -62,5 +65,8 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = NewCategory)
+	void RotateCompass();
 };
 
